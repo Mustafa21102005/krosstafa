@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+
+main {
+  z-index: 1;
+}
+
+div.cursors div {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 32px;
+  height: 32px;
+  /* Kaung change this color to the primary color */
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+div.cursors div span {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 300px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+div.cursors div span.visible {
+  opacity: 1;
+}
