@@ -1,12 +1,21 @@
+:root {
+  --primary-color:#FAF6F0;
+  --accent-color: #f0b77d;
+  --secondary-color: #F4DFC8;
+
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+
+
 body {
   overflow: hidden;
   background: #111;
-  color: #fff;
+  color: var(--primary-color);
 }
 
 canvas {
@@ -29,8 +38,7 @@ div.cursors div {
   left: 300px;
   width: 32px;
   height: 32px;
-  /* Kaung change this color to the primary color */
-  background-color: #fff;
+  background-color: var(--secondary-color);
   border-radius: 50%;
   z-index: 10000;
   pointer-events: none;
@@ -47,8 +55,111 @@ div.cursors div span {
   line-height: 32px;
   opacity: 0;
   transition: opacity 0.5s;
+  color: var(--accent-color);
 }
 
 div.cursors div span.visible {
   opacity: 1;
 }
+
+.logo {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-size: 32px;
+  font-weight: bold;
+  float: right;
+  margin: 23px 33px 0 0;
+}
+
+.socials-container {
+  display: flex;
+  gap: 37px;
+
+}
+
+.socials-container a svg {
+  height: 32px;
+}
+
+.socials-container .link {
+  background-color: white;
+  padding: 0.4em;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+
+}
+
+
+.socials-container .link::before {
+  content: attr(data-social);
+  position: absolute;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-30px) rotate(25deg);
+  opacity: 0;
+   transition: 200ms cubic-bezier(.42,0,.44,1.68);
+} 
+ 
+.socials-container .link:hover{
+  background-color: var(--accent-color);
+  fill: white;
+
+
+}
+
+.socials-container .link::after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left-color: 8px solid transparent;
+  border-right:8px solid transparent;
+  border-top: 10px solid var(--accent-color);
+  transform: translateY(0) rotate(25deg);
+  opacity: 0;
+   transition: 200ms cubic-bezier(.42,0,.44,1.68);
+
+}
+
+.socials-container .link:hover::before{
+  transform: translateY(-65px) rotate(0);
+  opacity: 1;
+}
+
+.socials-container .link:hover::after{
+  transform: translateY(-42px) rotate(0);
+  opacity: 1;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;  
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+span{
+  content: '';
+  width: 3px;
+  height: 25px;
+  display: inline;
+  background-color: blueviolet;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+
+}
+
