@@ -1,16 +1,13 @@
 :root {
-  --primary-color:#FAF6F0;
+  --primary-color: #faf6f0;
   --accent-color: #f0b77d;
-  --secondary-color: #F4DFC8;
-
+  --secondary-color: #f4dfc8;
 }
 
 * {
   margin: 0;
   padding: 0;
 }
-
-
 
 body {
   overflow: hidden;
@@ -70,10 +67,31 @@ div.cursors div span.visible {
   margin: 23px 33px 0 0;
 }
 
+.dash::before {
+  content: "—";
+}
+
+.count-text {
+  font-size: 3.8rem;
+  position: relative;
+  left: 5rem;
+  top: 15rem;
+}
+
+.count-text div {
+  font-size: 8rem;
+}
+
+.days span {
+  background: var(--accent-color);
+  color: #111;
+  padding: 0 0.5rem 0.8rem 0.5rem;
+  border-radius: 1rem;
+}
+
 .socials-container {
   display: flex;
   gap: 37px;
-
 }
 
 .socials-container a svg {
@@ -90,9 +108,7 @@ div.cursors div span.visible {
   flex-shrink: 0;
   display: grid;
   place-items: center;
-
 }
-
 
 .socials-container .link::before {
   content: attr(data-social);
@@ -105,52 +121,49 @@ div.cursors div span.visible {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transform: translateY(-30px) rotate(25deg);
   opacity: 0;
-   transition: 200ms cubic-bezier(.42,0,.44,1.68);
-} 
- 
-.socials-container .link:hover{
-  background-color: var(--accent-color);
-  fill: white;
-
-
+  transition: 200ms cubic-bezier(0.42, 0, 0.44, 1.68);
 }
 
-.socials-container .link::after{
-  content: '';
+.socials-container .link:hover {
+  background-color: var(--accent-color);
+  fill: white;
+}
+
+.socials-container .link::after {
+  content: "";
   position: absolute;
   height: 0;
   width: 0;
   border-left-color: 8px solid transparent;
-  border-right:8px solid transparent;
+  border-right: 8px solid transparent;
   border-top: 10px solid var(--accent-color);
   transform: translateY(0) rotate(25deg);
   opacity: 0;
-   transition: 200ms cubic-bezier(.42,0,.44,1.68);
-
+  transition: 200ms cubic-bezier(0.42, 0, 0.44, 1.68);
 }
 
-.socials-container .link:hover::before{
+.socials-container .link:hover::before {
   transform: translateY(-65px) rotate(0);
   opacity: 1;
 }
 
-.socials-container .link:hover::after{
-  transform: translateY(-42px) rotate(0);
+.socials-container .link:hover::after {
+  transform: translateY(-44px) rotate(0);
   opacity: 1;
 }
-
 
 footer {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 40%;  
+  width: 40%;
   text-align: center;
   margin-bottom: 20px;
 }
 
-span{
-  content: '';
+/* Kaung it is better to use classes instead because we are using span in other parts and that ruins the style. Thank you */
+/* span {
+  content: "";
   width: 3px;
   height: 25px;
   display: inline;
@@ -159,7 +172,4 @@ span{
   right: -10px;
   top: 50%;
   transform: translateY(-50%);
-
-
-}
-
+} */
