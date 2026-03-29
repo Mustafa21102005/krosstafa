@@ -161,6 +161,11 @@ footer {
   margin-bottom: 20px;
 }
 
+/* .footer-text {
+  float: left;
+  font-size: 28px;
+} */
+
 /* Kaung it is better to use classes instead because we are using span in other parts and that ruins the style. Thank you */
 /* span {
   content: "";
