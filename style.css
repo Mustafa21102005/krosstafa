@@ -69,6 +69,23 @@ div.cursors div span.visible {
 
 .dash::before {
   content: "—";
+  color: var(--accent-color);
+}
+
+.main {
+  display: flex;
+}
+
+.child {
+  float: left;
+  padding: 0 100px 0 0;
+}
+
+.main-text {
+  font-size: 4rem;
+  position: relative;
+  left: 5rem;
+  top: 10rem;
 }
 
 .count-text {
@@ -76,6 +93,10 @@ div.cursors div span.visible {
   position: relative;
   left: 5rem;
   top: 15rem;
+}
+
+.main-text div {
+  font-size: 4.5rem;
 }
 
 .count-text div {
@@ -159,6 +180,53 @@ footer {
   width: 40%;
   text-align: center;
   margin-bottom: 20px;
+}
+
+/* @keyframes logoColorAnimation {
+  0% {
+    color: var(--primary-color);
+  }
+
+  25% {
+    color: var(--secondary-color);
+  }
+
+  50% {
+    color: var(--primary-color);
+    color: var(--accent-color);
+  }
+
+  75% {
+    color: var(--secondary-color);
+  }
+
+  100% {
+    color: var(--primary-color);
+  }
+} */
+
+.text-animation {
+  background-image: linear-gradient(
+    to bottom right,
+    #f0b77d,
+    #f4dfc8,
+    #faf6f0,
+    #f0b77d,
+    #f4dfc8,
+    #faf6f0,
+    #f0b77d,
+    #f4dfc8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logo-animation 600s ease-in-out infinite;
+}
+
+@keyframes logo-animation {
+  to {
+    background-position: 4500vh;
+  }
 }
 
 /* .footer-text {
